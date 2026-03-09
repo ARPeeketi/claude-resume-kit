@@ -89,3 +89,4 @@
 - No credential dump in closing paragraph
 - No repeating resume bullets verbatim — CL deepens, doesn't duplicate
 - Limit quantified claims to 3-5 per CL
+- **Em-dashes in CLs:** Max 2 per document. CLs are prose-heavy and em-dashes compound quickly. Use commas for parenthetical asides, colons for elaborations, periods for new sentences. Paired em-dashes (X --- detail --- Y) should use commas or parentheses instead.

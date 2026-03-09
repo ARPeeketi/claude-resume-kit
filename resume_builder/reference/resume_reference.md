@@ -237,6 +237,8 @@ Run this checklist after compile gate passes, before critique. Also used as Part
 Before presenting final output, verify:
 
 - [ ] All mechanical checks pass (chars, orphans, page fill, no submitted, sequences, variants)
+- [ ] Em-dash count: max 2 per document (resume or CL). Fellowships items use `. ` not `---`.
+- [ ] No -ing analysis endings on bullets ("...advancing the field", "...contributing to Y"). Restructure to end with a concrete result or metric.
 - [ ] All content checks pass (ATS, terms, inflation, provenance, pubs, cover letter)
 - [ ] All narrative checks pass (scan test, per-position flow, cross-position arc, CV sub-headers)
 - [ ] Company/institution name spelled correctly throughout

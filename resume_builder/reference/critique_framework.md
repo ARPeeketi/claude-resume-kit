@@ -437,6 +437,18 @@ If a cover letter was generated in the same session, run all checks below. Detec
 
 ---
 
+## Part 6G: AI Fingerprint Scan
+
+Run the 12-item checklist from `resume_builder/support/ai_fingerprint_rules.md` Section 6. Key scans:
+- Count em-dashes (`---`) in full document — flag if >2
+- Scan all bullet endings for -ing analysis phrases (the #1 structural AI marker)
+- Search for any Tier 1 banned word (delve, tapestry, multifaceted, pivotal, etc.)
+- Check CL for generic opener and uniform sentence length
+
+Any failure is a Tier 1 fix in Part 4.
+
+---
+
 ## Part 7: Post-Generation Verification
 
 Final mechanical checklist. Run AFTER all other critique parts. These are pass/fail checks, not scored dimensions.

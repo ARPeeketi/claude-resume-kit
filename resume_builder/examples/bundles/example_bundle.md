@@ -19,7 +19,7 @@
 
 **Positioning strategy:** Lead with ML pipeline development and independent protein engineering results. Emphasize broadly applicable computational skills (protein language models, MD simulations, free energy methods). Show evidence of independence (first-author papers, open-source tools) alongside collaboration (experimental validation, mentorship).
 
-**Differentiation angle:** Not just an MD user or an ML practitioner --- a bridge between biomolecular simulation and data-driven protein design, with production-quality software skills.
+**Differentiation angle:** Not just an MD user or an ML practitioner , a bridge between biomolecular simulation and data-driven protein design, with production-quality software skills.
 
 ---
 
@@ -93,7 +93,7 @@
 **Opening hook options (pick one):**
 - Method-development hook: "My research develops ML-guided protein engineering pipelines that compress months of experimental screening into hours, enabling rapid discovery of thermostable enzymes and high-affinity binders."
 - Scale hook: "In the past two years, I have screened over 8,500 enzyme variants using protein language models I fine-tuned, identifying 5 experimentally confirmed thermostable candidates."
-- Vision hook: "The intersection of machine learning and biomolecular simulation --- where I have built my research program --- aligns closely with [Department]'s strengths in [specific area]."
+- Vision hook: "The intersection of machine learning and biomolecular simulation , where I have built my research program , aligns closely with [Department]'s strengths in [specific area]."
 
 **Paragraph 1 -- Research fit (3-4 sentences):**
 Connect your ML protein engineering work to the department's research strengths. Name the faculty or group if known. Reference one concrete result (e.g., 3,000x throughput, 5 confirmed hits).

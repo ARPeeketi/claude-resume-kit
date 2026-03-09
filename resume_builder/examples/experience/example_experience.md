@@ -1,3 +1,7 @@
+<!-- NOTE: Example bullets below show em-dashes (---) for parenthetical breaks. -->
+<!-- In actual generation, limit to max 2 em-dashes per full document. -->
+<!-- Prefer commas, semicolons, or parentheses for mid-bullet breaks. -->
+
 # Position: Postdoctoral Research Associate at Lakewood University
 
 ## Dates: Aug 2023 -- Present

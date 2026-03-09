@@ -174,6 +174,7 @@ If you proceed without confirmation, you will generate bullets the user didn't a
 **Re-read to restore context after compaction:**
 1. `output/<FolderName>/session_<name>.md` (framing + confirmed bullet plan)
 2. `resume_builder/reference/critical_rules.md` — Character Limits, Bold Width Penalty, Orphan rules
+3. `resume_builder/support/ai_fingerprint_rules.md` — Banned words, structural rules, post-gen checklist
 
 **Read template:** `resume_builder/templates/resume_template.tex` or `cv_template.tex` + `.cls`
 FIXED sections (from `config.md` FIXED Sections) are template-locked — only generate VARIABLE sections (Summary, Skills, Experience bullets/headers).

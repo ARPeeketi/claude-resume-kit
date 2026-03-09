@@ -60,6 +60,7 @@ Find and read the session file for the .tex being critiqued (use derivation prot
    - **Critique Context** → reviewer persona, competitive landscape, domain vocabulary
    - If session file lacks Company Context or Critique Context: do 1-2 web searches to fill gaps
 2. Read `resume_builder/reference/critique_framework.md`
+3. Read `resume_builder/support/ai_fingerprint_rules.md` — use Section 6 checklist in Part 7 verification
 3. Read the .tex file(s) — derive paths from session file Output Files, or from `$ARGUMENTS`
 4. Read the JD (path from `$ARGUMENTS` or session file)
 5. Read the relevant bundle (`resume_builder/bundles/bundle_[role_type].md` — from session file)

@@ -58,7 +58,8 @@ Read in this order:
 1. **Session file** — specifically: Company Context, Cover Letter Plan, Framing Strategy, ATS Keywords
 2. **Finished resume/CV .tex** — path from session file Output Files. Read to understand what CL must complement.
 3. `resume_builder/reference/cl_reference.md` — CL format rules, paragraph templates, anti-patterns
-4. The matching bundle from session file role type → `resume_builder/bundles/bundle_[role_type].md` — Section 5 (Cover Letter)
+4. `resume_builder/support/ai_fingerprint_rules.md` — Banned words, structural rules (CLs are most vulnerable)
+5. The matching bundle from session file role type → `resume_builder/bundles/bundle_[role_type].md` — Section 5 (Cover Letter)
 5. All significance files from `resume_builder/support/significance_*.md`
 
 Update session file Status: `Cover Letter: IN_PROGRESS`

@@ -121,6 +121,7 @@ Proceeding without confirmation may make unwanted edits that break package consi
 
 Load ONLY what the confirmed edits need:
 
+- **All edits:** `resume_builder/support/ai_fingerprint_rules.md` — scan for banned words/patterns before and after edits
 - **Bullet expand/rewrite/add:** `resume_builder/experience/` files + matching bundle + `resume_builder/support/achievement_reframing_guide.md`
 - **Summary rewrite:** Bundle (S2 summary guide) + `resume_builder/support/skills_taxonomy.md`
 - **Cover letter edits:** `resume_builder/support/significance_*.md` + `resume_builder/reference/cl_reference.md`
