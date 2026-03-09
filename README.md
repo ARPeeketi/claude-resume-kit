@@ -81,6 +81,7 @@ claude-resume-kit/
 │   ├── experience/                    # YOUR experience files (built by /setup-build-kb)
 │   ├── bundles/                       # YOUR role-type bundles (built by /setup-build-kb)
 │   └── support/                       # Skills taxonomy, pub metadata, AI fingerprint rules
+│       └── ai_fingerprint_rules.md    # Banned words, structural rules, 12-item checklist
 ├── knowledge_base/
 │   ├── extractions/                   # Paper extractions (built by /setup-extract)
 │   ├── papers/                        # Drop your PDFs / .tex source here
