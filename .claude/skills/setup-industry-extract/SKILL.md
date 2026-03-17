@@ -71,9 +71,10 @@ Create the extraction file at `knowledge_base/extractions/resume_context_<date>.
 ## Sections (in order)
 
 - Professional Summary
-- Positioning core value prop; role positioning table by resume type in format:
-| Resume Type / Target Role | Key Angle |
+- Role Type:
+| Resume Type / Target Role | Key Angle | Tier |
 |---|---|
+**Tier guide:** 1 = strongest evidence, full portfolio | 2 = strong with targeted emphasis | 3 = viable with careful framing
 - Work Experience (full details per role: company, title, location, dates, ALL bullet points with averaged metrics noted)
     If the format of the bullet is not one of these, convert into one of the format below:
     - [Action verb] + [what was done] + [quantitative result/impact]
@@ -93,7 +94,6 @@ Create the extraction file at `knowledge_base/extractions/resume_context_<date>.
     - [Optional: collaboration-framed bullet]
     - [Optional: tool/infrastructure bullet]
 - Volunteer Experience (all experience with full bullet point details)
-- Role Types Targeted (list all roles from resume files)
 - Key Themes & Strengths (top recurring themes with explanations)
 - Preferred Industries / Domains
 - Job Matching Notes (keywords by category, seniority signal, soft skill differentiators, geographic/logistics notes)
@@ -103,10 +103,6 @@ Create the extraction file at `knowledge_base/extractions/resume_context_<date>.
     2. [Result — e.g., "Screened 8,500 variants, identified 7 top candidates"]
     3. [...]
 
-## Novelty Claims
-[What's genuinely new — be precise, avoid overclaiming]
-- [e.g., "First application of framework X to system Y"]
-- [e.g., "New method combining A and B — no prior work exists"]
 ```
 
 Save the file. Show the user the complete extraction.
