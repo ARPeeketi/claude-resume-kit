@@ -140,9 +140,9 @@ For char counting: `\ce{TiO2}` → 4 rendered chars, `$\beta$` → 1 rendered ch
 
 _Update this section when starting/finishing a JD._
 
-| Session  | Status       | Next Command                               |
-| -------- | ------------ | ------------------------------------------ |
-| Neon SWE | Resume: DONE | `/make-cl output/Neon/session_neon_swe.md` |
+| Session  | Status                       | Next Command                                                                        |
+| -------- | ---------------------------- | ----------------------------------------------------------------------------------- |
+| Neon SWE | Critique: CURRENT (76.1/100) | `/edit-resume output/Neon/e2e_neon_swe_resume.tex output/Neon/critique_neon_swe.md` |
 
 ---
 
