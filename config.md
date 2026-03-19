@@ -32,7 +32,7 @@
 - **CV bullet variant:** 2L/3L mix
 - **Skills config (resume):** 4-3-2-2-2 (13 lines, 5 groups)
 - **Skills config (CV):** 4-4-3-3-3 (17 lines, 5 groups)
-- **Immigration line:** Yes | "Authorized to work in the United States"
+- **Immigration line:** Yes | "Authorized to Work in the US for any Employer Without Sponsorship"
 
 ---
 
