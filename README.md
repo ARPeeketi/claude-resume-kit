@@ -88,6 +88,8 @@ Edit `config.md` with your details (name, email, provenance flags, role types). 
 
 ### 2. Extract your papers
 
+## Research Focused
+
 Place PDFs or `.tex` source files in `knowledge_base/papers/`, then:
 
 ```
@@ -96,10 +98,27 @@ Place PDFs or `.tex` source files in `knowledge_base/papers/`, then:
 
 Claude reads the paper, asks clarifying questions about your contributions, and creates a structured extraction. Repeat for each paper.
 
+## Industry Focused
+
+Place PDFs from your Tailored Resumes or place your resume in `knowledge_base/industry, then: 
+
+```
+/setup-industry-extract knowledge_base/papers/my_paper.pdf
+```
+Claude reads the resumes, asks clarifying questions about your work, and creates a structured extraction. No Need to repeat for each resume.
+
 ### 3. Build your knowledge base
+
+## Research Focused
 
 ```
 /setup-build-kb
+```
+
+## Industry Focused
+
+```
+/setup-build-industry-kb
 ```
 
 This synthesizes all extractions into experience files, role-type bundles, and support files.
@@ -135,7 +154,9 @@ Job Description --> /make-resume --> Tailored Resume/CV (.tex)            |
 | Skill | Purpose | Input | Output |
 |-------|---------|-------|--------|
 | `/setup-extract` | Extract structured data from a paper | Paper path | `knowledge_base/extractions/*.md` |
+| `/setup-industy-extract` | Extract structured data from resumes | Resume path | `knowledge_base/extractions/*.md` |
 | `/setup-build-kb` | Build KB from extractions | All extractions | `resume_builder/{experience,bundles,support}/` |
+| `/setup-build-industry-kb` | Build KB from extractions | All extractions | `resume_builder/{experience,bundles,support}/` |
 | `/make-resume` | Generate tailored resume or CV | JD path | `output/<Folder>/e2e_*.tex` + session file |
 | `/make-cl` | Generate matching cover letter | Session file | `output/<Folder>/*_cover_letter.tex` |
 | `/edit-resume` | Edit resume/CV/CL from feedback | Session + feedback | Updated `.tex` files |

@@ -1,6 +1,7 @@
 ---
 description: Re-critique existing resume/CV output files against a JD
 user-invocable: true
+disable-model-invocation: true
 ---
 
 # /critique

@@ -32,3 +32,15 @@ __pycache__/
 
 # Session-specific (users may want to keep these — uncomment to ignore)
 # output/
+
+# Industry
+knowledge_base/industry/*.pdf
+knowledge_base/extractions/*.md
+!knowledge_base/extractions/_INVENTORY_INDUSTRY.md
+resume_builder/bundles/*.md
+resume_builder/experience/*.md
+resume_builder/support/*.md
+!resume_builder/support/ai_fingerprint_rules.md
+JDs/**
+!JDs/example_jd.txt
+output/**

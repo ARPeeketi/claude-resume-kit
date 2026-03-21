@@ -1,4 +1,5 @@
 ---
+name: setup-build-industry-kb
 description: Synthesize completed extractions into the knowledge base files needed for resume generation
 user-invocable: true
 disable-model-invocation: true
@@ -20,15 +21,14 @@ Parse `$ARGUMENTS`:
 
 1. Read `CLAUDE.md` — check KB Corrections Log
 2. Read `config.md` — load:
-   - Personal Info (positions, institutions, dates)
-   - Role Types table (defines which bundles to create)
-   - Provenance Flags (propagate to all KB files)
-   - Document Preferences (bullet variant defaults)
-3. Read `knowledge_base/extractions/_INVENTORY.md` — verify extractions exist
+   - Personal Info
+   - Document Preferences
+3. Read `knowledge_base/extractions/_INVENTORY_INDUSTRY.md` — verify extractions exist
+4. Read the latest `knowledge_base/extractions/resume_context` based on the dates at the end of filename, this is called `resume context` for this skill
 4. Scan `resume_builder/` to see what's already built
 
 **Pre-flight check:**
-- If `_INVENTORY.md` is empty or has no entries: "No extractions found. Run `/setup-extract` first." Stop.
+- If `_INVENTORY_INDUSTRY.md` is empty or has no entries: "No extractions found. Run `/setup-extract` first." Stop.
 - If fewer than 2 extractions: warn "Only [N] extraction(s) found. KB quality improves with more papers. Continue anyway?"
 
 Progress: "Found [N] extractions across [M] positions. Config has [K] role types defined."
@@ -39,17 +39,17 @@ Progress: "Found [N] extractions across [M] positions. Config has [K] role types
 
 **Goal:** Create one experience file per position, containing all achievements organized for resume generation.
 
-**Read:** All extraction files listed in `_INVENTORY.md`
+**Read:** `resume context`
 
-**For each position** (from `config.md` or inferred from extraction metadata):
+**For each position** (from the latest `knowledge_base/extractions/resume_context`):
 
 1. Group extractions by the position they belong to (based on dates, institution, or user clarification)
-2. Ask the user to confirm grouping if ambiguous: "I've grouped these papers under [Position]. Correct?"
+2. Ask the user to confirm grouping if ambiguous: Correct?"
 
 **Experience file format** (`resume_builder/experience/experience_<position_key>.md`):
 
 ```markdown
-# Experience: [Position Title] — [Institution]
+# Experience: [Position Title] — [Company]
 ## [Date Range]
 
 ### Cross-Position Section
@@ -60,9 +60,7 @@ Progress: "Found [N] extractions across [M] positions. Config has [K] role types
 
 ### Achievement [ID]: [Short Title]
 **Source:** [extraction filename]
-**Paper:** [citation or "internal"/"unpublished"]
-**User's role:** [first author / contributing / sole developer]
-**Status:** [published / under review / draft / internal]
+**User's role:** [sole developer / Senior Developer / Developer]
 
 **Context:** [1-2 sentences — what problem, why it matters]
 
@@ -90,7 +88,7 @@ Ask user to review: "Are the groupings correct? Any achievements missing or misa
 
 **Goal:** Create a categorized inventory of all technical skills from extractions.
 
-**Read:** All extraction files (Methods & Tools sections) + experience files from Phase 1
+**Read:** All Methods & Tools sections + `resume context`
 
 **Build** `resume_builder/support/skills_taxonomy.md`:
 
@@ -107,7 +105,7 @@ Ask user to review: "Are the groupings correct? Any achievements missing or misa
 ### [Category 1: e.g., Computational Methods]
 | Skill | Proficiency | Evidence | Resume Weight |
 |-------|-----------|----------|---------------|
-| [skill] | [expert/proficient/familiar] | [paper IDs] | [HIGH/MED/LOW] |
+| [skill] | [expert/proficient/familiar] | [Short description linking to reason] | [HIGH/MED/LOW] |
 
 ### [Category 2: e.g., Programming & Software]
 [same table format]
@@ -115,55 +113,23 @@ Ask user to review: "Are the groupings correct? Any achievements missing or misa
 ### [Category 3: e.g., Machine Learning]
 [same table format]
 
-[Continue for all categories — typically 4-7 categories]
+[Continue for all categories]
 ```
 
 **Proficiency levels:**
-- **Expert:** Multiple first-author papers, developed custom tools
-- **Proficient:** Used extensively in published work, comfortable teaching
+- **Expert:** Lead, created, Developed custom tools
+- **Proficient:** Used extensively in work, comfortable teaching, mentored
 - **Familiar:** Used in one project, or contributed to someone else's implementation
 
 Progress: "Built taxonomy — [N] skills across [M] categories"
 
 ---
 
-## Phase 3: Build Publication Metadata
-
-**Goal:** Structured pub data for resume/CV generation.
-
-**Build** `resume_builder/support/pub_metadata.md`:
-
-```markdown
-# Publication Metadata
-
-## Summary
-- Total publications: [N]
-- First-author: [N] | Co-first: [N] | Contributing: [N]
-- Published: [N] | Under review: [N] | In preparation: [N]
-
-## Publication List
-
-### First-Author / Co-First
-| # | Citation (et al. format) | Journal | Year | Status | Key Topic |
-|---|-------------------------|---------|------|--------|-----------|
-| 1 | [Author et al., Journal, Year] | [journal] | [year] | [status] | [topic] |
-
-### Contributing Author
-[same table format]
-
-### Under Review / In Preparation
-[same table format, with provenance notes]
-```
-
-Progress: "Pub metadata — [N] first-author, [M] contributing, [K] under review"
-
----
-
-## Phase 4: Build Achievement Reframing Guide
+## Phase 3: Build Achievement Reframing Guide
 
 **Goal:** Per-achievement significance lines + framing directives for each role type.
 
-**Read:** Experience files + `config.md` Role Types
+**Read:** Experience files + Role Types in `resume context`
 
 **Build** `resume_builder/support/achievement_reframing_guide.md`:
 
@@ -185,9 +151,7 @@ The role-type table shows how to emphasize/de-emphasize for each target audience
 | [role 2] | MEDIUM | Applied | [bridge to Y domain] |
 | [role 3] | LOW | -- | [omit or condense] |
 
-**Overclaiming warning:** [if applicable — e.g., "Do not claim sole credit for experimental results"]
-**First-pass checklist:** [ ] Verb matches author role [ ] Numbers from paper [ ] Status matches provenance
-
+**Overclaiming warning:** [if applicable — e.g., "Do not claim sole credit for sections where "helped" generate results"]
 ---
 [Repeat for each achievement]
 ```
@@ -199,19 +163,19 @@ Ask user: "Does this priority mapping look right for your target roles?"
 
 ---
 
-## Phase 5: Build Bundles
+## Phase 4: Build Bundles
 
-**Goal:** One bundle per role type from `config.md`, with 5 sections each.
+**Goal:** One bundle per role type from `resume context`, with 5 sections each.
 
-**Read:** Experience files + Skills Taxonomy + Reframing Guide + `config.md` Role Types
+**Read:** Experience files + Skills Taxonomy + Reframing Guide + `resume context` Role Types
 
 **For each role type**, create `resume_builder/bundles/bundle_<role_type>.md`:
 
 ```markdown
 # Bundle: [Role Type Name]
 
-> Target employers: [from config.md]
-> Tier: [from config.md]
+> Target employers: [from `resume context`]
+> Tier: [from `resume context`]
 
 ---
 
@@ -257,7 +221,6 @@ Ask user: "Does this priority mapping look right for your target roles?"
 
 ## S5: Cover Letter Guide
 
-**Institution type:** [Industry / National Lab / Academic]
 **Opening hook pattern:** [template for first paragraph opener]
 **Key narrative thread:** [what story to tell across paragraphs]
 **"Why them" angle:** [what to research about target employer]
@@ -268,7 +231,7 @@ Progress: "Building bundle for [role type] — [N] HIGH priority achievements, [
 
 ---
 
-## Phase 6: Build Significance Research Files
+## Phase 5: Build Significance Research Files
 
 **Goal:** Field context for cover letters — NOT for resume bullets.
 
@@ -285,7 +248,7 @@ Progress: "Building bundle for [role type] — [N] HIGH priority achievements, [
 ### [Achievement ID]: Field Context
 **The problem:** [What challenge does this address? Industry/scientific context]
 **Competing approaches:** [What else exists? What are the limitations?]
-**Why this matters:** [Market size, DOE/funding priorities, industry need]
+**Why this matters:** [Market size, industry need]
 **Differentiation:** [What makes the user's approach unique or better?]
 
 ---
@@ -309,7 +272,6 @@ After all phases complete (or after the requested subset), present:
 |-----------|------|--------|-------|
 | Experience files | `experience/*.md` | [DONE/MISSING] | [N achievements] |
 | Skills taxonomy | `support/skills_taxonomy.md` | [DONE/MISSING] | [N skills] |
-| Pub metadata | `support/pub_metadata.md` | [DONE/MISSING] | [N pubs] |
 | Reframing guide | `support/achievement_reframing_guide.md` | [DONE/MISSING] | [N entries] |
 | Bundles | `bundles/bundle_*.md` | [DONE/MISSING] | [N bundles] |
 | Significance | `support/significance_*.md` | [DONE/MISSING] | [N files] |
@@ -318,7 +280,6 @@ After all phases complete (or after the requested subset), present:
 - [ ] At least 1 experience file with 5+ achievements
 - [ ] Skills taxonomy with 20+ skills
 - [ ] At least 1 bundle matching a target role type
-- [ ] Pub metadata complete
 - [ ] Reframing guide covers all achievements
 - [ ] Significance files for cover letter depth
 

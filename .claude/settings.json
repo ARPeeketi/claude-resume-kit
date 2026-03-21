@@ -1,0 +1,17 @@
+{
+    "hooks": {
+        "PostToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "jq -r '.tool_input.command // empty' | { read -r cmd || exit 0; echo \"$cmd\" | grep -qE '\\bpdflatex\\b' || exit 0; texfile=$(echo \"$cmd\" | tr ' ' '\\n' | grep '\\.tex$' | head -1); [ -n \"$texfile\" ] || exit 0; outdir=$(echo \"$cmd\" | grep -oE -- '-output-directory[= ][^[:space:]]+' | sed 's/.*[= ]//'); dir=\"${outdir:-$(dirname \"$texfile\")}\"; latexmk -c -outdir=\"$dir\" \"$texfile\"; } 2>/dev/null || true",
+                        "statusMessage": "Cleaning LaTeX aux files..."
+                    }
+                ]
+            }
+        ]
+    },
+    "respectGitignore": false
+}

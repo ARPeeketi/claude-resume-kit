@@ -1,6 +1,7 @@
 ---
 description: Generate a tailored resume/CV from a JD
 user-invocable: true
+disable-model-invocation: true
 ---
 
 # /make-resume

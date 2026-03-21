@@ -1,6 +1,7 @@
 ---
 description: Extract structured information from research papers, PDFs, or code into knowledge base extractions
 user-invocable: true
+disable-model-invocation: true
 ---
 
 # /setup-extract
